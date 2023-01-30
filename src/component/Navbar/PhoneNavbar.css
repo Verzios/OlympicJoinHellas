@@ -1,0 +1,45 @@
+.hamburger--top {
+  height: 2px;
+  width: 22px;
+  background-color: rgb(236, 236, 236);
+  z-index: 40;
+}
+.hamburger--middle {
+  height: 2px;
+  width: 22px;
+  background-color: rgb(236, 236, 236);
+}
+.hamburger--bottom {
+  height: 2px;
+  width: 22px;
+  background-color: rgb(236, 236, 236);
+}
+
+.nav {
+  -webkit-backface-visibility: hidden;
+}
+
+.stage {
+  --cell-width: 200px;
+  --cell-height: calc(var(--cell-width) * 1.2);
+  --cell-spacing: 4px;
+
+  padding-top: calc(var(--cell-width) * 0.25);
+  padding-bottom: calc(var(--cell-width) * 0.25);
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  margin-top: calc(var(--cell-width) * -0.27 + var(--cell-spacing));
+  margin-bottom: calc(var(--cell-width) * -0.27 + var(--cell-spacing));
+}
+
+.cell {
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  background-color: steelblue;
+  width: var(--cell-width);
+  height: var(--cell-height);
+  margin-left: var(--cell-spacing);
+  margin-right: var(--cell-spacing);
+}
