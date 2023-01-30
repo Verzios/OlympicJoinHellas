@@ -17,6 +17,11 @@ const starting = {
     opacity: 0,
     transition: { delay: 0.1, type: "linear", y: { duration: 1.4 } },
   },
+  hover: {
+    backgroundColor: "#326da8",
+    y: 20,
+    transition: { delay: 0.1, type: "linear", y: { duration: 0.4 } },
+  },
 };
 const Hero = (props: Props) => {
   const [text, count] = useTypewriter({
@@ -49,7 +54,7 @@ const Hero = (props: Props) => {
           ΕΠΙΚΟΙΝΩΝΙΑ
         </h4>
       </div>
-      <div className="absolute bottom-4">
+      <div className="absolute bottom-12">
         <motion.button
           className="border-[#326da8] border-2 rounded-full p-1"
           variants={starting}
@@ -58,7 +63,10 @@ const Hero = (props: Props) => {
           exit="exit"
           whileHover="hover"
         >
-          <AiOutlineArrowDown size={32} color="#326da8" />
+          <AiOutlineArrowDown
+            size={32}
+            className="text-[#326da8] hover:text-slate-50 transition-all duration-500"
+          />
         </motion.button>
       </div>
     </div>
