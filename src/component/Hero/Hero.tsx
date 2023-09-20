@@ -4,6 +4,7 @@ import { Cursor } from "react-simple-typewriter";
 import "./Links.css";
 import { AiOutlineArrowDown } from "react-icons/ai";
 import { motion } from "framer-motion";
+import { NavLink } from "react-router-dom";
 type Props = {};
 const starting = {
   hidden: {
@@ -26,7 +27,7 @@ const starting = {
 const Hero = (props: Props) => {
   const [text, count] = useTypewriter({
     words: [
-      "Καλώς ήρθατε στο Olympic Join Hellas",
+      "Καλώς ήρθατε στην Olympic Join Hellas",
       "Σωληνουργικές εργασίες",
       "Επισκευές Boiler - Λέβητες (Καζάνια)",
       "Επισκευές Inert Gas Generator",
@@ -40,34 +41,41 @@ const Hero = (props: Props) => {
   return (
     <div className="flex flex-col justify-center items-center h-full ">
       {" "}
-      <h1 className="text-2xl lg:text-6xl font-semibold px-10">
+      <h1 className="text-3xl lg:text-start text-center lg:text-6xl font-semibold lg:px-10">
         <span className="text-slate-600 tracking-wider">{text}</span>
         <Cursor cursorColor="#326da8" />
       </h1>
-      <div className="flex flex-row bottom-32 absolute justify-between w-1/2 tracking-wide font-semibold ">
+      <div className="lg:flex hidden flex-row bottom-32 absolute justify-between lg:w-1/2 tracking-wide font-semibold ">
         <h4 className="cursor-pointer hover-underline-animation">ΑΡΧΙΚΗ</h4>
-        <h4 className="cursor-pointer hover-underline-animation">
+        <a className="cursor-pointer hover-underline-animation" href="#about">
           ΠΟΙΟΙ ΕΙΜΑΣΤΕ
-        </h4>
-        <h4 className="cursor-pointer hover-underline-animation">ΥΠΗΡΕΣΙΕΣ</h4>
-        <h4 className="cursor-pointer hover-underline-animation">
+        </a>
+        <a
+          className="cursor-pointer hover-underline-animation"
+          href="#services"
+        >
+          ΥΠΗΡΕΣΙΕΣ
+        </a>
+        <a className="cursor-pointer hover-underline-animation" href="#contact">
           ΕΠΙΚΟΙΝΩΝΙΑ
-        </h4>
+        </a>
       </div>
       <div className="absolute bottom-12">
-        <motion.button
-          className="border-[#326da8] border-2 rounded-full p-1"
-          variants={starting}
-          initial="hidden"
-          animate="visible"
-          exit="exit"
-          whileHover="hover"
-        >
-          <AiOutlineArrowDown
-            size={32}
-            className="text-[#326da8] hover:text-slate-50 transition-all duration-500"
-          />
-        </motion.button>
+        <a href="#about">
+          <motion.button
+            className="border-[#326da8] border-2 rounded-full p-1"
+            variants={starting}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            whileHover="hover"
+          >
+            <AiOutlineArrowDown
+              size={32}
+              className="text-[#326da8] hover:text-slate-50 transition-all duration-500"
+            />
+          </motion.button>
+        </a>
       </div>
     </div>
   );

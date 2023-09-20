@@ -18,6 +18,21 @@ const starting = {
     transition: { delay: 0.1, type: "linear", opacity: { duration: 1.4 } },
   },
 };
+const text = {
+  initial: {
+    opacity: 0,
+  },
+  hover: {
+    opacity: 1,
+    rotateY: 180,
+    transition: {
+      delay: 0.1,
+      type: "linear",
+      opacity: { duration: 1.4 },
+      rotateY: { duration: 1 },
+    },
+  },
+};
 const variantMenu = {
   hidden: {
     y: "-100vh",
@@ -86,6 +101,14 @@ const row2Left = {
     x: "-200vh",
     transition: { delay: 0.1, type: "linear", x: { duration: 0.5 } },
   },
+  hover: {
+    rotateY: 180,
+    transition: {
+      delay: 0.1,
+      ease: "easeInOutCubicBezier",
+      rotateY: { duration: 1 },
+    },
+  },
 };
 const row2Right = {
   hidden: {
@@ -102,6 +125,14 @@ const row2Right = {
     opacity: 0,
     transition: { delay: 0.1, type: "linear", x: { duration: 0.5 } },
   },
+  hover: {
+    rotateY: 180,
+    transition: {
+      delay: 0.1,
+      ease: "easeInOutCubicBezier",
+      rotateY: { duration: 1 },
+    },
+  },
 };
 const row3Left = {
   hidden: {
@@ -117,6 +148,14 @@ const row3Left = {
     x: "-200vh",
     transition: { delay: 0.1, type: "linear", x: { duration: 0.5 } },
   },
+  hover: {
+    rotateY: 180,
+    transition: {
+      delay: 0.1,
+      ease: "easeInOutCubicBezier",
+      rotateY: { duration: 1 },
+    },
+  },
 };
 const row3Center = {
   hidden: {
@@ -131,6 +170,14 @@ const row3Center = {
   exit: {
     y: "200vh",
     transition: { delay: 0.1, type: "linear", y: { duration: 0.5 } },
+  },
+  hover: {
+    rotateY: 180,
+    transition: {
+      delay: 0.1,
+      ease: "easeInOutCubicBezier",
+      rotateY: { duration: 1 },
+    },
   },
 };
 const row3Right = {
@@ -148,6 +195,14 @@ const row3Right = {
     opacity: 0,
     transition: { delay: 0.1, type: "linear", x: { duration: 0.5 } },
   },
+  hover: {
+    rotateY: 180,
+    transition: {
+      delay: 0.1,
+      ease: "easeInOutCubicBezier",
+      rotateY: { duration: 1 },
+    },
+  },
 };
 const ModernNav = (props: Props) => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -155,7 +210,7 @@ const ModernNav = (props: Props) => {
   return (
     <div className="relative z-30 ">
       <motion.button
-        className=" fixed z-40 top-8 right-[17px]  space-y-1   items-center justify-center px-4 py-3 rounded-tl-sm rounded-bl-sm"
+        className=" fixed z-40 lg:top-8 top-6 right-[17px]  space-y-1  items-center justify-center px-4 py-3 rounded-tl-sm rounded-bl-sm"
         onClick={() => setIsOpen(!isOpen)}
         style={{ backgroundColor: "#326da8" }}
         initial={false}
@@ -210,7 +265,7 @@ const ModernNav = (props: Props) => {
             animate="visible"
             exit="exit"
           >
-            <motion.div className="grid grid-cols-5 col-span-2">
+            <motion.div className="lg:grid hidden grid-cols-5 lg:col-span-2 ">
               {isOpen && (
                 <motion.div
                   className="bg-[#326da8] col-span-5 relative flex container justify-center items-center"
@@ -239,7 +294,16 @@ const ModernNav = (props: Props) => {
                         animate="visible"
                         exit="exit"
                         whileHover="hover"
-                      ></motion.div>
+                      >
+                        <motion.h4
+                          className="text-slate-50 flex justify-center items-center h-full bg-[#326da8]"
+                          variants={text}
+                          initial="initial"
+                          whileHover="hover"
+                        >
+                          <NavLink to="/">Ελασματουργικές εργασίες</NavLink>
+                        </motion.h4>
+                      </motion.div>
                     </div>
                     <div className="row">
                       <motion.div
@@ -253,7 +317,17 @@ const ModernNav = (props: Props) => {
                         initial="hidden"
                         animate="visible"
                         exit="exit"
-                      ></motion.div>
+                        whileHover="hover"
+                      >
+                        <motion.h4
+                          className="text-slate-50 flex justify-center items-center h-full bg-[#326da8]"
+                          variants={text}
+                          initial="initial"
+                          whileHover="hover"
+                        >
+                          <NavLink to="/">Σωληνουργικές εργασίες</NavLink>
+                        </motion.h4>
+                      </motion.div>
                       <motion.div
                         className="cell"
                         variants={row2Right}
@@ -265,7 +339,19 @@ const ModernNav = (props: Props) => {
                         initial="hidden"
                         animate="visible"
                         exit="exit"
-                      ></motion.div>
+                        whileHover="hover"
+                      >
+                        <motion.h4
+                          className="text-slate-50 flex justify-center items-center h-full bg-[#326da8]"
+                          variants={text}
+                          initial="initial"
+                          whileHover="hover"
+                        >
+                          <NavLink to="/" className="text-center">
+                            Επισκευές Boiler - Λέβητες (Καζάνια)
+                          </NavLink>
+                        </motion.h4>
+                      </motion.div>
                     </div>
                     <div className="row">
                       <motion.div
@@ -279,7 +365,19 @@ const ModernNav = (props: Props) => {
                         initial="hidden"
                         animate="visible"
                         exit="exit"
-                      ></motion.div>
+                        whileHover="hover"
+                      >
+                        <motion.h4
+                          className="text-slate-50 flex justify-center items-center h-full bg-[#326da8]"
+                          variants={text}
+                          initial="initial"
+                          whileHover="hover"
+                        >
+                          <NavLink to="/" className="text-center">
+                            Επισκευές Inert Gas Generator
+                          </NavLink>
+                        </motion.h4>
+                      </motion.div>
                       <motion.div
                         className="cell"
                         style={{
@@ -291,7 +389,19 @@ const ModernNav = (props: Props) => {
                         initial="hidden"
                         animate="visible"
                         exit="exit"
-                      ></motion.div>
+                        whileHover="hover"
+                      >
+                        <motion.h4
+                          className="text-slate-50 flex justify-center items-center h-full bg-[#326da8]"
+                          variants={text}
+                          initial="initial"
+                          whileHover="hover"
+                        >
+                          <NavLink to="/" className="text-center">
+                            Μονώσεις Πλοίων
+                          </NavLink>
+                        </motion.h4>
+                      </motion.div>
                       <motion.div
                         className="cell"
                         style={{
@@ -303,7 +413,19 @@ const ModernNav = (props: Props) => {
                         initial="hidden"
                         animate="visible"
                         exit="exit"
-                      ></motion.div>
+                        whileHover="hover"
+                      >
+                        <motion.h4
+                          className="text-slate-50 flex justify-center items-center h-full bg-[#326da8]"
+                          variants={text}
+                          initial="initial"
+                          whileHover="hover"
+                        >
+                          <NavLink to="/" className="text-center">
+                            Εξαερισμός
+                          </NavLink>
+                        </motion.h4>
+                      </motion.div>
                     </div>
                   </div>
                 </motion.div>
@@ -312,7 +434,7 @@ const ModernNav = (props: Props) => {
 
             {isOpen && (
               <motion.div
-                className="bg-gray-500 h-full"
+                className="bg-gray-500 h-full lg:col-span-1 col-span-3"
                 variants={variantMenu}
                 initial="hidden"
                 animate="visible"

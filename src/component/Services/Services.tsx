@@ -7,6 +7,7 @@ import { FaGasPump } from "react-icons/fa";
 import { GiTeePipe } from "react-icons/gi";
 import { AiTwotoneMedicineBox } from "react-icons/ai";
 import { NavLink } from "react-router-dom";
+import { GiGasStove, GiChemicalTank } from "react-icons/gi";
 type Props = {};
 const starting = {
   hidden: {
@@ -54,14 +55,14 @@ const Services = (props: Props) => {
   return (
     <div className="h-full relative">
       <div className="pt-[90px]">
-        <h4 className="text-center text-3xl text-slate-800 tracking-widest hover-underline-animation font-semibold cursor-pointer px-96">
+        <h4 className="text-center lg:text-3xl text-2xl text-slate-800 tracking-widest hover-underline-animation font-semibold cursor-pointer lg:px-96">
           Yπηρεσίες
         </h4>
-        <div className="w-screen grid grid-cols-6 gap-12 px-0 mt-48 relative justify-center items-center h-full space-x-12">
-          <div className="flex justify-center">
+        <div className="w-screen h-full grid lg:grid-cols-6 grid-cols-2 gap-12 lg:px-0  lg:mt-48 mt-12 relative justify-center lg:items-center lg:space-x-12">
+          <div className="lg:flex justify-center">
             <NavLink
               to="/"
-              className="flex flex-col justify-center items-center space-y-4"
+              className="flex flex-col justify-center items-center space-y-4 lg:text-start text-center"
             >
               <motion.div
                 className="border-2 rounded-full p-3 border-[#326da8]"
@@ -86,7 +87,7 @@ const Services = (props: Props) => {
           <div className="flex justify-center">
             <NavLink
               to="/"
-              className="flex flex-col justify-center items-center absolute top-24 space-y-4"
+              className="flex flex-col justify-center items-center lg:absolute lg:top-24 space-y-4 lg:text-start text-center"
             >
               <motion.div
                 className="border-2 rounded-full p-3 border-[#326da8]"
@@ -96,7 +97,7 @@ const Services = (props: Props) => {
                 whileHover="hover"
                 viewport={{ once: true }}
               >
-                <AiTwotoneMedicineBox
+                <GiChemicalTank
                   size={48}
                   className="text-[#326da8] hover:text-slate-50 transition-colors duration-500"
                 />
@@ -111,7 +112,7 @@ const Services = (props: Props) => {
           <div className="flex justify-center">
             <NavLink
               to="/"
-              className="flex flex-col justify-center items-center top-48 absolute space-y-4"
+              className="flex flex-col justify-center items-center lg:top-48 lg:absolute space-y-4 lg:text-start text-center"
             >
               <motion.div
                 className="border-2 rounded-full p-3 border-[#326da8]"
@@ -134,7 +135,7 @@ const Services = (props: Props) => {
           <div className="flex justify-center">
             <NavLink
               to="/"
-              className="flex flex-col justify-center items-center top-48 absolute space-y-4"
+              className="flex flex-col justify-center items-center lg:top-48 lg:absolute space-y-4 lg:text-start text-center"
             >
               <motion.div
                 className="border-2 rounded-full p-3 border-[#326da8]"
@@ -159,7 +160,7 @@ const Services = (props: Props) => {
           <div className="flex justify-center">
             <NavLink
               to="/"
-              className="flex flex-col justify-center items-center top-24 absolute space-y-4"
+              className="flex flex-col justify-center items-center lg:top-24 absolute space-y-4 lg:text-start text-center"
             >
               <motion.div
                 className="border-2 rounded-full p-3 border-[#326da8]"
@@ -169,14 +170,14 @@ const Services = (props: Props) => {
                 whileHover="hover"
                 viewport={{ once: true }}
               >
-                <FaGasPump
+                <GiGasStove
                   size={48}
                   className="text-[#326da8] hover:text-slate-50 transition-colors duration-500"
                 />
               </motion.div>
               <div>
-                <h4 className="font-semibold tracking-wider">
-                  Επισκευές Inert Gas Generator
+                <h4 className="font-semibold tracking-wider  w-full h-full lg:text-start text-center">
+                  Επισκευές Inert Gas
                 </h4>
               </div>
             </NavLink>

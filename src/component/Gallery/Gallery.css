@@ -1,0 +1,27 @@
+.slick-dots li button:before {
+  background-color: #326da8;
+  width: 15px !important;
+  height: 15px !important;
+  border-radius: 50%;
+  color: #ffc425;
+  overflow: hidden;
+  text-indent: -9999px;
+  margin-top: 20px;
+}
+
+.slick-slide.slick-active {
+  visibility: visible;
+}
+.slick-arrow::before {
+  color: "red";
+}
+.slick-next {
+}
+.slick-next::before {
+  color: #326da8 !important;
+  font-size: 28px;
+}
+.slick-prev::before {
+  color: #326da8 !important;
+  font-size: 28px;
+}
