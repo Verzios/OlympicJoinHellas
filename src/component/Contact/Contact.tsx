@@ -79,6 +79,7 @@ const Contact = (props: Props) => {
                     {errors.firstName.message}
                   </span>
                 )}
+                
                 <input
                   placeholder="Όνομα"
                   {...register("firstName", {
